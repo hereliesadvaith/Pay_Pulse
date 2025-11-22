@@ -9,7 +9,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh '/home/advaith/.nvm/versions/node/v20.17.0/bin/npm install && /home/advaith/.nvm/versions/node/v20.17.0/bin/npm start'
+        sh 'node -v'
       }
     }
 
