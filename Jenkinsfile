@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
+    stage('Test') {
       steps {
-        git(url: 'https://github.com/hereliesadvaith/Pay_Pulse.git', branch: 'main')
+        echo 'Started Test 1'
       }
     }
 
