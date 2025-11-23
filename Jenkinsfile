@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'ls'
+        sh 'docker start -a fervent_tu'
       }
     }
 
