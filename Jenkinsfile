@@ -9,7 +9,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh 'ls'
+        sh 'docker container ls -a'
       }
     }
 
