@@ -1,15 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Build') {
       steps {
-        echo 'Started Test 1'
+        sh 'docker build -t pay_pulse .'
       }
     }
 
-    stage('Build') {
+    stage('Test 1') {
+      parallel {
+        stage('Test 1') {
+          steps {
+            echo 'Test 1'
+          }
+        }
+
+        stage('Test 2') {
+          steps {
+            echo 'Test 2'
+          }
+        }
+
+      }
+    }
+
+    stage('Run') {
       steps {
-        sh 'docker start -a fervent_tu'
+        sh 'docker run -d -p 5000:5000 pay_pulse:latest'
       }
     }
 
