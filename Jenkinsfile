@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('Run') {
+    stage('Build') {
       steps {
-        sh 'docker image ls'
+        sh 'ls'
       }
     }
 
